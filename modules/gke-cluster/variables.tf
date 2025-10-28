@@ -153,3 +153,9 @@ variable "node_pools" {
   }))
   default = {}
 }
+
+variable "deletion_protection" {
+  description = "When set to true, protects the cluster from accidental deletion."
+  type        = bool
+  default     = true
+}

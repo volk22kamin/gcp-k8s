@@ -35,6 +35,8 @@ resource "google_container_cluster" "primary" {
 
   resource_labels = var.cluster_resource_labels
 
+  deletion_protection = var.deletion_protection
+
   dynamic "release_channel" {
     for_each = var.release_channel != null ? [var.release_channel] : []
     content {
@@ -102,7 +104,6 @@ resource "google_container_node_pool" "pools" {
     preemptible     = each.value.preemptible
     service_account = each.value.service_account
     oauth_scopes    = each.value.oauth_scopes
-    subnetwork      = each.value.subnetwork
 
     labels   = length(each.value.labels) > 0 ? each.value.labels : null
     tags     = length(each.value.tags) > 0 ? each.value.tags : null

@@ -24,6 +24,8 @@ module "cluster" {
 
   cluster_resource_labels = local.common_labels
 
+  deletion_protection = false
+
   private_cluster_config = {
     enable_private_nodes    = false
     enable_private_endpoint = false
