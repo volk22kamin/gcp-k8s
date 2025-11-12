@@ -1,0 +1,21 @@
+# Terraform local state and state backups
+*.tfstate
+*.tfstate.backup
+
+# Terraform plan files
+*.tfplan
+
+# Local Terraform directories and caches
+**/.terraform/
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Variable definition files
+# These often contain sensitive information and should not be versioned.
+# Use a different file name for variables that can be versioned, e.g. `variables.tf`
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
